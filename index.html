@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northwestern Christian Training Institute (NTI) - Official Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        nti: {
+                            blue: '#1e3a8a',
+                            gold: '#d97706',
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .tab-active { border-bottom: 3px solid #d97706; color: #1e3a8a; font-weight: 700; }
+        .gradient-banner { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%); }
+        .gold-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo & Branding -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                    <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-amber-400 font-extrabold text-xl shadow-md border-2 border-amber-500">
+                        NTI
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-bold text-blue-950 leading-tight">Northwestern Christian Training Institute</h1>
+                        <p class="text-xs text-amber-600 font-semibold tracking-wide">Equipping Leaders for Kingdom Impact</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 font-medium text-slate-700">
+                    <button id="nav-home" onclick="switchTab('home')" class="py-2 text-blue-900 border-b-2 border-amber-500 font-bold transition">Home</button>
+                    <button id="nav-courses" onclick="switchTab('courses')" class="py-2 hover:text-blue-900 transition">Courses & Fees</button>
+                    <button id="nav-graduates" onclick="switchTab('graduates')" class="py-2 hover:text-blue-900 transition">Graduates & Alumni</button>
+                    <button id="nav-admissions" onclick="switchTab('admissions')" class="py-2 hover:text-blue-900 transition">Admissions & Payment</button>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <button onclick="switchTab('admissions')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-4 py-2 rounded-lg shadow transition transform hover:-translate-y-0.5 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Apply Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-blue-900 p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchTab('home')" class="block w-full text-left py-2 font-medium text-blue-900">Home</button>
+            <button onclick="switchTab('courses')" class="block w-full text-left py-2 font-medium text-slate-700">Courses & Fees</button>
+            <button onclick="switchTab('graduates')" class="block w-full text-left py-2 font-medium text-slate-700">Graduates Directory</button>
+            <button onclick="switchTab('admissions')" class="block w-full text-left py-2 font-medium text-slate-700">Admissions & Fees</button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- ========================================================================= -->
+        <!-- TAB 1: HOME PAGE -->
+        <!-- ========================================================================= -->
+        <section id="tab-home" class="tab-content">
+            <!-- Hero Section -->
+            <div class="gradient-banner text-white py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                <div class="max-w-7xl mx-auto relative z-10 grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-7 space-y-6">
+                        <span class="inline-block bg-amber-500/20 text-amber-300 font-semibold text-xs px-3 py-1 rounded-full border border-amber-400/30">
+                            <i class="fa-solid fa-graduation-cap mr-1"></i> Official Graduation Celebration Portal
+                        </span>
+                        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                            Empowering Gospel Leaders & Visionary Scholars
+                        </h1>
+                        <p class="text-slate-300 text-base sm:text-lg">
+                            Welcome to Northwestern Christian Training Institute (NTI). We proudly celebrate the graduating class of <strong>112 distinguished leaders</strong> equipped across Certificates, Diplomas, Bachelors, Masters, and Doctoral Degrees.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="switchTab('graduates')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-lg transition flex items-center gap-2">
+                                <i class="fa-solid fa-users-viewfinder"></i> Explore 112 Graduates
+                            </button>
+                            <button onclick="switchTab('admissions')" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/20 transition flex items-center gap-2">
+                                <i class="fa-solid fa-file-signature"></i> Enroll Today
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Leadership Card Banner -->
+                    <div class="md:col-span-5">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white shadow-2xl">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-16 h-16 rounded-full bg-amber-500 text-slate-900 font-extrabold text-2xl flex items-center justify-center border-2 border-white shadow">
+                                    DA
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-amber-300">Dr. Albert Adonda</h3>
+                                    <p class="text-xs text-slate-200 uppercase tracking-widest font-medium">President & Presiding Chancellor</p>
+                                </div>
+                            </div>
+                            <blockquote class="italic text-slate-200 text-sm border-l-2 border-amber-400 pl-3 py-1">
+                                "Congratulations to all 112 graduating students! Go forth into the global field with unwavering faith, integrity, and excellence."
+                            </blockquote>
+                            <div class="mt-4 pt-4 border-t border-white/10 flex justify-between text-xs text-slate-300">
+                                <span><i class="fa-solid fa-certificate text-amber-400 mr-1"></i> Accredited Programs</span>
+                                <span><i class="fa-solid fa-earth-africa text-amber-400 mr-1"></i> Global Impact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURED SECTION: CLASS OF GRADUATING STUDENTS -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <!-- Section Title & Intro -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-amber-600 font-extrabold tracking-wider uppercase text-xs">Honor Roll & Commencement</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mt-1">Class of Graduating Students</h2>
+                    <p class="text-slate-600 mt-2 text-base">
+                        Explore our graduating cohort of 112 servants and scholars. Filter by academic qualification level or search by student name or course.
+                    </p>
+                </div>
+
+                <!-- Stats Overview Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center hover:border-blue-400 transition cursor-pointer" onclick="filterHomeByLevel('ALL')">
+                        <span class="block text-2xl font-extrabold text-slate-900" id="stat-total">112</span>
+                        <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Graduates</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center hover:border-amber-400 transition cursor-pointer" onclick="filterHomeByLevel('PhD')">
+                        <span class="block text-2xl font-extrabold text-amber-600" id="stat-phd">6</span>
+                        <span class="text-xs font-semibold text-amber-700 uppercase tracking-wider">Doctorates (PhD)</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center hover:border-purple-400 transition cursor-pointer" onclick="filterHomeByLevel('MA')">
+                        <span class="block text-2xl font-extrabold text-purple-600" id="stat-ma">17</span>
+                        <span class="text-xs font-semibold text-purple-700 uppercase tracking-wider">Masters (MA)</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center hover:border-blue-400 transition cursor-pointer" onclick="filterHomeByLevel('BA')">
+                        <span class="block text-2xl font-extrabold text-blue-600" id="stat-ba">39</span>
+                        <span class="text-xs font-semibold text-blue-700 uppercase tracking-wider">Bachelors (BA)</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center hover:border-emerald-400 transition cursor-pointer" onclick="filterHomeByLevel('DIP')">
+                        <span class="block text-2xl font-extrabold text-emerald-600" id="stat-dip">33</span>
+                        <span class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Diplomas (DIP)</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center hover:border-slate-400 transition cursor-pointer" onclick="filterHomeByLevel('CT')">
+                        <span class="block text-2xl font-extrabold text-slate-600" id="stat-ct">17</span>
+                        <span class="text-xs font-semibold text-slate-600 uppercase tracking-wider">Certificates (CT)</span>
+                    </div>
+                </div>
+
+                <!-- Homepage Live Search & Filter Bar -->
+                <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-200 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+                    <!-- Quick Level Filter Tabs -->
+                    <div class="flex flex-wrap gap-2 w-full md:w-auto" id="home-filter-tabs">
+                        <button onclick="filterHomeByLevel('ALL')" class="home-tab-btn px-4 py-2 text-xs font-bold rounded-lg bg-blue-900 text-white shadow-sm transition">All Levels (112)</button>
+                        <button onclick="filterHomeByLevel('HIGHER')" class="home-tab-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">PhD & Masters (23)</button>
+                        <button onclick="filterHomeByLevel('BA')" class="home-tab-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Bachelors (39)</button>
+                        <button onclick="filterHomeByLevel('DIP')" class="home-tab-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Diplomas (33)</button>
+                        <button onclick="filterHomeByLevel('CT')" class="home-tab-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Certificates (17)</button>
+                    </div>
+
+                    <!-- Live Search Input -->
+                    <div class="relative w-full md:w-80">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400"></i>
+                        <input type="text" id="home-search-input" onkeyup="handleHomeSearch()" placeholder="Search name, course or level..." class="w-full pl-10 pr-4 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                    </div>
+                </div>
+
+                <!-- Homepage Graduates Cards Grid -->
+                <div id="home-graduates-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic rendering via JavaScript -->
+                </div>
+
+                <!-- Empty State Message -->
+                <div id="home-no-results" class="hidden text-center py-12 bg-white rounded-xl border border-dashed border-slate-300">
+                    <i class="fa-solid fa-user-slash text-4xl text-slate-400 mb-3"></i>
+                    <p class="text-slate-600 font-semibold">No graduating students match your query.</p>
+                    <button onclick="resetHomeFilter()" class="mt-3 text-xs bg-blue-900 text-white font-bold px-4 py-2 rounded-lg">Reset Search & Filters</button>
+                </div>
+
+                <!-- Homepage Pagination / View Full Directory Banner -->
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-blue-900 to-slate-900 text-white p-6 rounded-2xl shadow-xl gap-4">
+                    <div>
+                        <h4 class="text-lg font-bold text-amber-400">Want to inspect the entire official register?</h4>
+                        <p class="text-xs text-slate-300">Access the full searchable directory with sorting, printing, and detailed breakdown.</p>
+                    </div>
+                    <button onclick="switchTab('graduates')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow transition flex items-center gap-2 whitespace-nowrap text-sm">
+                        <i class="fa-solid fa-address-book"></i> View Full Alumni Directory
+                    </button>
+                </div>
+            </div>
+
+            <!-- Core Programs Overview Section -->
+            <div class="bg-slate-100 py-16 border-t border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                        <div>
+                            <span class="text-amber-600 font-extrabold uppercase text-xs">Academic Programs</span>
+                            <h2 class="text-3xl font-extrabold text-slate-900">Explore Our Academics</h2>
+                        </div>
+                        <button onclick="switchTab('courses')" class="mt-4 md:mt-0 text-blue-900 font-bold hover:underline flex items-center gap-1 text-sm">
+                            View All Academic Courses <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-book-bible"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Bible & Theology</h3>
+                            <p class="text-slate-600 text-sm mb-4">Rigorous biblical exegesis, systematic theology, and ministry leadership preparing students for ministerial callings.</p>
+                            <span class="text-xs bg-slate-100 font-semibold px-2.5 py-1 rounded text-slate-700">Cert • Dip • BA • MA • PhD</span>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Counseling Psychology</h3>
+                            <p class="text-slate-600 text-sm mb-4">Equipping holistic care practitioners to support individuals, families, and communities through Christian-centered therapy.</p>
+                            <span class="text-xs bg-slate-100 font-semibold px-2.5 py-1 rounded text-slate-700">Dip • BA • MA</span>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-purple-100 text-purple-900 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Public Admin & Governance</h3>
+                            <p class="text-slate-600 text-sm mb-4">Preparing ethical public administrators, community leaders, and institutional managers for public and civil leadership.</p>
+                            <span class="text-xs bg-slate-100 font-semibold px-2.5 py-1 rounded text-slate-700">Dip • BA • MA • PhD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: COURSES & FEES -->
+        <!-- ========================================================================= -->
+        <section id="tab-courses" class="tab-content hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="text-amber-600 font-extrabold uppercase text-xs">Curriculum & Programs</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Academic Programs & Fee Breakdown</h2>
+                    <p class="text-slate-600 mt-2">Comprehensive accredited biblical and professional degree, diploma, and certificate programs.</p>
+                </div>
+
+                <!-- Fee Payment Notice Banner -->
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-xl mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-info text-amber-600 text-2xl"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Official Tuition Payment Method</h4>
+                            <p class="text-xs text-slate-600">M-Pesa Paybill: <strong class="text-slate-900">400200</strong> | Account Number: <strong class="text-slate-900">1049314</strong></p>
+                        </div>
+                    </div>
+                    <button onclick="switchTab('admissions')" class="bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs hover:bg-amber-600 transition">
+                        View Payment Instructions
+                    </button>
+                </div>
+
+                <!-- Courses Table -->
+                <div class="bg-white rounded-2xl shadow border border-slate-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                                    <th class="p-4">Program Level</th>
+                                    <th class="p-4">Course Field</th>
+                                    <th class="p-4">Duration</th>
+                                    <th class="p-4">Entry Requirement</th>
+                                    <th class="p-4 text-right">Tuition / Term</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-sm">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-bold text-amber-700">PhD / Doctorate</td>
+                                    <td class="p-4 font-semibold text-slate-900">Bible & Theology / Governance / Linguistics</td>
+                                    <td class="p-4 text-slate-600">3 Years</td>
+                                    <td class="p-4 text-slate-600">Master's Degree in relevant field</td>
+                                    <td class="p-4 text-right font-bold text-slate-900">KES 45,000</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-bold text-purple-700">Master's (MA)</td>
+                                    <td class="p-4 font-semibold text-slate-900">LAM / Counseling / Ed Admin / Economics / Chaplaincy</td>
+                                    <td class="p-4 text-slate-600">2 Years</td>
+                                    <td class="p-4 text-slate-600">Bachelor's Degree (Upper 2nd Class)</td>
+                                    <td class="p-4 text-right font-bold text-slate-900">KES 32,000</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-bold text-blue-700">Bachelor's (BA)</td>
+                                    <td class="p-4 font-semibold text-slate-900">Bible & Theology / Project Mgmt / Governance / LAM</td>
+                                    <td class="p-4 text-slate-600">3-4 Years</td>
+                                    <td class="p-4 text-slate-600">KCSE C+ or Diploma equivalent</td>
+                                    <td class="p-4 text-right font-bold text-slate-900">KES 22,000</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-bold text-emerald-700">Diploma (DIP)</td>
+                                    <td class="p-4 font-semibold text-slate-900">Bible & Theology / Counseling / Public Admin</td>
+                                    <td class="p-4 text-slate-600">2 Years</td>
+                                    <td class="p-4 text-slate-600">KCSE C- or Certificate</td>
+                                    <td class="p-4 text-right font-bold text-slate-900">KES 14,500</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-bold text-slate-700">Certificate (CT)</td>
+                                    <td class="p-4 font-semibold text-slate-900">Bible & Theology / Pastoral Studies (CPS)</td>
+                                    <td class="p-4 text-slate-600">1 Year</td>
+                                    <td class="p-4 text-slate-600">KCSE D+ or Ministry Experience</td>
+                                    <td class="p-4 text-right font-bold text-slate-900">KES 9,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 3: GRADUATES & ALUMNI DIRECTORY -->
+        <!-- ========================================================================= -->
+        <section id="tab-graduates" class="tab-content hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                    <div>
+                        <span class="text-amber-600 font-extrabold uppercase text-xs">Official Institutional Registry</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900">Graduates & Alumni Directory</h2>
+                        <p class="text-slate-600 text-sm mt-1">Complete roll of all 112 graduating scholars across all departments.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="printGraduateList()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-4 py-2 rounded-lg text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-print"></i> Print Register
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Directory Filter Controls -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 mb-6 grid md:grid-cols-12 gap-4 items-center">
+                    <!-- Search Input -->
+                    <div class="md:col-span-5 relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                        <input type="text" id="dir-search" onkeyup="renderDirectoryTable()" placeholder="Search by graduate name or course..." class="w-full pl-10 pr-4 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                    </div>
+
+                    <!-- Level Filter Dropdown -->
+                    <div class="md:col-span-4">
+                        <select id="dir-level-filter" onchange="renderDirectoryTable()" class="w-full py-2.5 px-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                            <option value="ALL">All Qualification Levels (112 Total)</option>
+                            <option value="PhD">Doctor of Philosophy (PhD)</option>
+                            <option value="MA">Master of Arts (MA)</option>
+                            <option value="BA">Bachelor of Arts (BA)</option>
+                            <option value="DIP">Diploma (DIP)</option>
+                            <option value="CT">Certificate (CT)</option>
+                        </select>
+                    </div>
+
+                    <!-- Count Indicator -->
+                    <div class="md:col-span-3 text-right text-xs font-semibold text-slate-500">
+                        Showing <span id="dir-count-visible" class="text-blue-900 font-bold text-sm">112</span> of 112 Graduates
+                    </div>
+                </div>
+
+                <!-- Full Table -->
+                <div class="bg-white rounded-2xl shadow border border-slate-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse" id="dir-table">
+                            <thead>
+                                <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                                    <th class="p-4 w-16 text-center">No.</th>
+                                    <th class="p-4">Student Name</th>
+                                    <th class="p-4">Academic Field / Specialty</th>
+                                    <th class="p-4 text-center">Level</th>
+                                    <th class="p-4 text-right">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dir-table-body" class="divide-y divide-slate-200 text-sm">
+                                <!-- Populated dynamically by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 4: ADMISSIONS & PAYMENTS -->
+        <!-- ========================================================================= -->
+        <section id="tab-admissions" class="tab-content hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-8">
+                    
+                    <!-- Left Column: Application Form -->
+                    <div class="lg:col-span-7 bg-white p-8 rounded-2xl shadow-md border border-slate-200">
+                        <span class="text-amber-600 font-extrabold uppercase text-xs">Enrollment</span>
+                        <h2 class="text-2xl font-extrabold text-slate-900 mb-6">Student Application Form</h2>
+                        
+                        <form id="admission-form" onsubmit="handleApplicationSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Full Official Name *</label>
+                                <input type="text" required placeholder="e.g. John Doe Mwangi" class="w-full p-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone Number (M-Pesa) *</label>
+                                    <input type="tel" required placeholder="07XX XXX XXX" class="w-full p-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email Address</label>
+                                    <input type="email" placeholder="student@example.com" class="w-full p-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Desired Program Level *</label>
+                                    <select required class="w-full p-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                                        <option value="">Select Level</option>
+                                        <option value="CT">Certificate (CT)</option>
+                                        <option value="DIP">Diploma (DIP)</option>
+                                        <option value="BA">Bachelor of Arts (BA)</option>
+                                        <option value="MA">Master of Arts (MA)</option>
+                                        <option value="PhD">Doctor of Philosophy (PhD)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Course Specialization *</label>
+                                    <select required class="w-full p-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                                        <option value="">Select Specialization</option>
+                                        <option value="Bible & Theology">Bible & Theology</option>
+                                        <option value="Counseling Psychology">Counseling Psychology</option>
+                                        <option value="Public Administration">Public Administration & Governance</option>
+                                        <option value="Leadership">Leadership & Public Governance (LAM)</option>
+                                        <option value="Education">Education Administration & Management</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Brief Statement of Calling / Goals</label>
+                                <textarea rows="3" placeholder="Share briefly why you feel called to this course..." class="w-full p-3 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3.5 rounded-lg shadow-md transition">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Submit Online Application
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right Column: M-Pesa & Support Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- M-Pesa Paybill Card -->
+                        <div class="bg-gradient-to-br from-emerald-800 to-green-950 text-white p-6 rounded-2xl shadow-lg border border-emerald-700">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-emerald-500/30 text-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase border border-emerald-400/30">Official M-Pesa Payment</span>
+                                <i class="fa-solid fa-mobile-screen-button text-2xl text-emerald-300"></i>
+                            </div>
+                            <h3 class="text-2xl font-black mb-4 text-emerald-100">Fee Payment Instructions</h3>
+                            
+                            <div class="space-y-3 bg-black/20 p-4 rounded-xl text-sm border border-white/10">
+                                <div class="flex justify-between items-center pb-2 border-b border-white/10">
+                                    <span class="text-slate-300">Paybill Number:</span>
+                                    <span class="font-mono font-extrabold text-amber-400 text-lg">400200</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300">Account Number:</span>
+                                    <span class="font-mono font-extrabold text-amber-400 text-lg">1049314</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-emerald-200 mt-4">
+                                * Enter your official student name or admission ID as the account reference when clearing tuition fees.
+                            </p>
+                        </div>
+
+                        <!-- Direct Assistance / WhatsApp Support -->
+                        <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                            <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-headset text-blue-900"></i> Admissions Office Enquiries
+                            </h4>
+                            <p class="text-xs text-slate-600 mb-4">
+                                Need help with registration or requirement clarification? Contact our registrar directly.
+                            </p>
+                            <a href="https://wa.me/?text=Hello%20Northwestern%20Christian%20Training%20Institute,%20I%20would%20like%20to%20inquire%20about%20admissions." target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg shadow transition flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Instant WhatsApp Consultation
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Northwestern Christian Training Institute</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Equipping gospel ministers and servant leaders through rigorous theological, psychological, and governance education.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-2">Chancellor Leadership</h4>
+                <p class="text-slate-300 font-semibold">Dr. Albert Adonda</p>
+                <p class="text-slate-400">President & Founder</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-2">Quick Navigation</h4>
+                <div class="flex flex-col space-y-1">
+                    <button onclick="switchTab('home')" class="text-left hover:text-amber-400 transition">Home</button>
+                    <button onclick="switchTab('courses')" class="text-left hover:text-amber-400 transition">Courses & Fees</button>
+                    <button onclick="switchTab('graduates')" class="text-left hover:text-amber-400 transition">112 Graduates Directory</button>
+                    <button onclick="switchTab('admissions')" class="text-left hover:text-amber-400 transition">Admissions</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-slate-800 text-center text-slate-500">
+            &copy; 2026 Northwestern Christian Training Institute (NTI). All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // =========================================================================
+        // COMPLETE 112 GRADUATING STUDENTS DATASET
+        // =========================================================================
+        const graduatesData = [
+            { id: 1, name: "Eunice Wanjiru Leki", course: "Bible & Theology", level: "CT" },
+            { id: 2, name: "Susan Muthoni Mucheru", course: "Bible & Theology", level: "CT" },
+            { id: 3, name: "Wilson Mwangi", course: "Bible & Theology", level: "CT" },
+            { id: 4, name: "Dinah Khavugwi", course: "CPS", level: "CT" },
+            { id: 5, name: "Ernest Wanyama", course: "Bible & Theology", level: "CT" },
+            { id: 6, name: "Titus J. Kanusu", course: "Bible & Theology", level: "CT" },
+            { id: 7, name: "Isaiah Muchemi Shikwe", course: "Bible & Theology", level: "CT" },
+            { id: 8, name: "Ayub Wekesa Muchina", course: "Bible & Theology", level: "CT" },
+            { id: 9, name: "Millicent Cherop", course: "Bible & Theology", level: "CT" },
+            { id: 10, name: "Joseline Chemtai Psirimoi", course: "Bible & Theology", level: "CT" },
+            { id: 11, name: "Joseph Kori Wachira", course: "Bible & Theology", level: "CT" },
+            { id: 12, name: "Lucas Okech Osawo", course: "Bible & Theology", level: "CT" },
+            { id: 13, name: "Evans Muhele Nyongesa", course: "Bible & Theology", level: "CT" },
+            { id: 14, name: "Everlyne Nekesa Nyongesa", course: "Bible & Theology", level: "CT" },
+            { id: 15, name: "Iren Wanyama", course: "Bible & Theology", level: "CT" },
+            { id: 16, name: "Albert Cheruiyat Tuwei", course: "Bible & Theology", level: "CT" },
+            { id: 17, name: "Philip Psirimoi", course: "Bible & Theology", level: "CT" },
+            { id: 18, name: "Albert Cheruiyat Tuwei", course: "Bible & Theology", level: "DIP" },
+            { id: 19, name: "Meschack Abedinego", course: "Bible & Theology", level: "DIP" },
+            { id: 20, name: "Catherin S. Munge", course: "Bible & Theology", level: "DIP" },
+            { id: 21, name: "Margaret Wambui", course: "Bible & Theology", level: "DIP" },
+            { id: 22, name: "Lucy Wangare", course: "Counseling Psychology", level: "DIP" },
+            { id: 23, name: "Elias Natembeya Murongoro", course: "Bible & Theology", level: "DIP" },
+            { id: 24, name: "Oliver Wanjala Makasi", course: "Bible & Theology", level: "DIP" },
+            { id: 25, name: "Alex Wanjala Nyongesa", course: "Bible & Theology", level: "DIP" },
+            { id: 26, name: "Elias Juma", course: "Bible & Theology", level: "DIP" },
+            { id: 27, name: "Peter Mwangi Maina", course: "Bible & Theology", level: "DIP" },
+            { id: 28, name: "Charity Wangu' Ng'ang'a", course: "Bible & Theology", level: "DIP" },
+            { id: 29, name: "Duncan Ndegwa Muoho", course: "Bible & Theology", level: "DIP" },
+            { id: 30, name: "Douglas Maina Mwangi", course: "Bible & Theology", level: "DIP" },
+            { id: 31, name: "Robert Kipkemboi", course: "Bible & Theology", level: "DIP" },
+            { id: 32, name: "David Waweru Nderitu", course: "Bible & Theology", level: "DIP" },
+            { id: 33, name: "Veronica Wanjiku Mwangi", course: "Bible & Theology", level: "DIP" },
+            { id: 34, name: "Sophia Waithera Wamae", course: "Bible & Theology", level: "DIP" },
+            { id: 35, name: "Nancy Mahiva Muliango", course: "Bible & Theology", level: "DIP" },
+            { id: 36, name: "Gilbert Magombere", course: "Bible & Theology", level: "DIP" },
+            { id: 37, name: "Kevin Misikhu Sakwa", course: "Bible & Theology", level: "DIP" },
+            { id: 38, name: "Caleb Elphapen Muliro", course: "Bible & Theology", level: "DIP" },
+            { id: 39, name: "Daniel Mwita Gesase", course: "Bible & Theology", level: "DIP" },
+            { id: 40, name: "Geoffrey Misango", course: "Bible & Theology", level: "DIP" },
+            { id: 41, name: "Margaret Njeri Kimani", course: "Bible & Theology", level: "DIP" },
+            { id: 42, name: "Florah Mugure Kinyanjui", course: "Bible & Theology", level: "DIP" },
+            { id: 43, name: "Peter Njehia Kagwi", course: "Bible & Theology", level: "DIP" },
+            { id: 44, name: "Evans Ajanga", course: "Bible & Theology", level: "DIP" },
+            { id: 45, name: "Walter Ifedha Liyayi", course: "Bible & Theology", level: "DIP" },
+            { id: 46, name: "David Bwonya Mhunzu", course: "Bible & Theology", level: "DIP" },
+            { id: 47, name: "Windasi Andambe Maheli", course: "Bible & Theology", level: "DIP" },
+            { id: 48, name: "Godfrey Andole Amisi", course: "Bible & Theology", level: "DIP" },
+            { id: 49, name: "Roselyne Kavusia", course: "Bible & Theology", level: "DIP" },
+            { id: 50, name: "Nancy Butiki", course: "Public Administration & Governance", level: "DIP" },
+            { id: 51, name: "Elizabeth Ambululi", course: "Bible & Theology", level: "BA" },
+            { id: 52, name: "Ulric Benaiah Kimi", course: "Bible & Theology", level: "BA" },
+            { id: 53, name: "Rose Wasike", course: "Bible & Theology", level: "BA" },
+            { id: 54, name: "Michael Mwaura Haron", course: "Bible & Theology", level: "BA" },
+            { id: 55, name: "Patrick Osinya Ouma", course: "Bible & Theology", level: "BA" },
+            { id: 56, name: "Alice Masitsa Mwakha", course: "Bible & Theology", level: "BA" },
+            { id: 57, name: "David Mukhonyi Imbiakha", course: "Bible & Theology", level: "BA" },
+            { id: 58, name: "Rosetone Nchivata", course: "Bible & Theology", level: "BA" },
+            { id: 59, name: "Philip Otieno Kasaya", course: "Bible & Theology", level: "BA" },
+            { id: 60, name: "Marycer Mbwavi", course: "Bible & Theology", level: "BA" },
+            { id: 61, name: "Davis Kihumba Nguro", course: "Bible & Theology", level: "BA" },
+            { id: 62, name: "Simon Chege Munyange", course: "Bible & Theology", level: "BA" },
+            { id: 63, name: "Agnes Waruguru Ng'ang'a", course: "Bible & Theology", level: "BA" },
+            { id: 64, name: "Kennedy Lilechi Ganira", course: "Bible & Theology", level: "BA" },
+            { id: 65, name: "Ebel Onyango Sanda", course: "Bible & Theology", level: "BA" },
+            { id: 66, name: "Faith Waceke Karanja", course: "Bible & Theology", level: "BA" },
+            { id: 67, name: "Roseline Wangari Kamau", course: "Bible & Theology", level: "BA" },
+            { id: 68, name: "Kennedy Adubwa Lihanda", course: "Bible & Theology", level: "BA" },
+            { id: 69, name: "David Likabichi Chesia", course: "Bible & Theology", level: "BA" },
+            { id: 70, name: "Jackline Maresi", course: "Bible & Theology", level: "BA" },
+            { id: 71, name: "Joab Lusimbo Barasa", course: "Bible & Theology", level: "BA" },
+            { id: 72, name: "Judith Nasimiyu Sikolia", course: "Counseling Psychology", level: "BA" },
+            { id: 73, name: "Abel Mwangi", course: "Bible & Theology", level: "BA" },
+            { id: 74, name: "David Igogo Kabara", course: "Bible & Theology", level: "BA" },
+            { id: 75, name: "Peter Mulwa Kiilu", course: "Bible & Theology", level: "BA" },
+            { id: 76, name: "Milkah Muthoni", course: "Bible & Theology", level: "BA" },
+            { id: 77, name: "Catherine Maina", course: "Bible & Theology", level: "BA" },
+            { id: 78, name: "Jonathan K. Kibor", course: "Bible & Theology", level: "BA" },
+            { id: 79, name: "John Kimaki Ndugu", course: "Bible & Theology", level: "BA" },
+            { id: 80, name: "Silvester Inyangala", course: "Bible & Theology", level: "BA" },
+            { id: 81, name: "Wafula Juma", course: "Bible & Theology", level: "BA" },
+            { id: 82, name: "Beatrice Ndung'u", course: "Bible & Theology", level: "BA" },
+            { id: 83, name: "Toili Davison Musanga", course: "Public Administration & Governance", level: "BA" },
+            { id: 84, name: "George Wanyonyi Wekesa", course: "Project Management", level: "BA" },
+            { id: 85, name: "Metrine Sikuku Khamala", course: "Leadership & Public Governance", level: "BA" },
+            { id: 86, name: "Veronicah Musis Agolla", course: "Education Administration & Governance", level: "BA" },
+            { id: 87, name: "Christine Kundu", course: "Education Planning Administration & Management", level: "BA" },
+            { id: 88, name: "David Likabichi Chesia", course: "LAM", level: "BA" },
+            { id: 89, name: "Dorice Nasambu Wasike", course: "Public Administration & Governance", level: "BA" },
+            { id: 90, name: "Susan Wanjaru Joram", course: "Bible & Theology", level: "MA" },
+            { id: 91, name: "Josphati Matasio Busolo", course: "LAM", level: "MA" },
+            { id: 92, name: "David Sirengo", course: "Education Planning Administration & Management", level: "MA" },
+            { id: 93, name: "Nicholas Khamisimagata", course: "LAM", level: "MA" },
+            { id: 94, name: "Aggrey Savai Indaje", course: "LAM", level: "MA" },
+            { id: 95, name: "Alfred Litete Onyango", course: "LAM", level: "MA" },
+            { id: 96, name: "Wilson Avung'ana Imbwaga", course: "Chaplaincy", level: "MA" },
+            { id: 97, name: "Andrew Ndura Mukaru", course: "Bible & Theology", level: "MA" },
+            { id: 98, name: "Kennedy Andayi Enos", course: "Bible & Theology", level: "MA" },
+            { id: 99, name: "Margaret Ngari", course: "Bible & Theology", level: "MA" },
+            { id: 100, name: "Enock Angatia", course: "Bible & Theology", level: "MA" },
+            { id: 101, name: "Paul Mburu Ng'ang'a", course: "Counseling Psychology", level: "MA" },
+            { id: 102, name: "Gladys Wekunda", course: "Education Planning Administration & Management", level: "MA" },
+            { id: 103, name: "Evans Asacha Asiri", course: "LAM", level: "MA" },
+            { id: 104, name: "Moses Kunguru Andaie", course: "Bible & Theology", level: "MA" },
+            { id: 105, name: "Adelaide Nanjala Wekesa", course: "Public Administration & Governance", level: "MA" },
+            { id: 106, name: "Timothy Meru Situma", course: "Economics", level: "MA" },
+            { id: 107, name: "Peter Muingai Ngugi", course: "Bible & Theology", level: "PhD" },
+            { id: 108, name: "Joram Kimoi Waichahi", course: "Bible & Theology", level: "PhD" },
+            { id: 109, name: "Henry Mbuuru", course: "Bible & Theology", level: "PhD" },
+            { id: 110, name: "Timothy Meru Situma", level: "PhD", course: "Linguistic" },
+            { id: 111, name: "John Koyi Waluke", course: "Public Administration & Governance", level: "PhD" },
+            { id: 112, name: "Robert Musungu Marakwa", course: "Public Administration & Governance", level: "PhD" }
+        ];
+
+        // State Tracking
+        let currentHomeLevelFilter = 'ALL';
+        let currentHomeSearchQuery = '';
+
+        // Badge color picker helper
+        function getLevelBadgeClass(level) {
+            switch(level) {
+                case 'PhD': return 'bg-amber-100 text-amber-800 border-amber-300';
+                case 'MA': return 'bg-purple-100 text-purple-800 border-purple-300';
+                case 'BA': return 'bg-blue-100 text-blue-800 border-blue-300';
+                case 'DIP': return 'bg-emerald-100 text-emerald-800 border-emerald-300';
+                case 'CT': default: return 'bg-slate-100 text-slate-800 border-slate-300';
+            }
+        }
+
+        function getLevelFullName(level) {
+            switch(level) {
+                case 'PhD': return 'Doctor of Philosophy';
+                case 'MA': return 'Master of Arts';
+                case 'BA': return 'Bachelor of Arts';
+                case 'DIP': return 'Diploma';
+                case 'CT': return 'Certificate';
+                default: return level;
+            }
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Reset navigation active state
+            const navIds = ['home', 'courses', 'graduates', 'admissions'];
+            navIds.forEach(id => {
+                const btn = document.getElementById('nav-' + id);
+                if (btn) {
+                    if (id === tabId) {
+                        btn.className = "py-2 text-blue-900 border-b-2 border-amber-500 font-bold transition";
+                    } else {
+                        btn.className = "py-2 hover:text-blue-900 text-slate-700 transition";
+                    }
+                }
+            });
+
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // =========================================================================
+        // HOMEPAGE FEATURED GRADUATES RENDERING
+        // =========================================================================
+        function filterHomeByLevel(level) {
+            currentHomeLevelFilter = level;
+            renderHomepageGraduates();
+        }
+
+        function handleHomeSearch() {
+            currentHomeSearchQuery = document.getElementById('home-search-input').value.toLowerCase().trim();
+            renderHomepageGraduates();
+        }
+
+        function resetHomeFilter() {
+            currentHomeLevelFilter = 'ALL';
+            currentHomeSearchQuery = '';
+            document.getElementById('home-search-input').value = '';
+            renderHomepageGraduates();
+        }
+
+        function renderHomepageGraduates() {
+            const container = document.getElementById('home-graduates-grid');
+            const noResults = document.getElementById('home-no-results');
+
+            // Filter logic
+            let filtered = graduatesData.filter(student => {
+                // Level filter
+                let matchesLevel = false;
+                if (currentHomeLevelFilter === 'ALL') matchesLevel = true;
+                else if (currentHomeLevelFilter === 'HIGHER') matchesLevel = (student.level === 'PhD' || student.level === 'MA');
+                else matchesLevel = (student.level === currentHomeLevelFilter);
+
+                // Search query filter
+                let matchesSearch = true;
+                if (currentHomeSearchQuery) {
+                    matchesSearch = student.name.toLowerCase().includes(currentHomeSearchQuery) ||
+                                    student.course.toLowerCase().includes(currentHomeSearchQuery) ||
+                                    student.level.toLowerCase().includes(currentHomeSearchQuery);
+                }
+
+                return matchesLevel && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            // Render rich grid cards
+            container.innerHTML = filtered.map(student => `
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-amber-400 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-xs font-mono font-bold text-slate-400">#${student.id}</span>
+                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full border ${getLevelBadgeClass(student.level)}">
+                                ${student.level} - ${getLevelFullName(student.level)}
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-base leading-snug mb-1">${student.name}</h3>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 mt-2">
+                            <i class="fa-solid fa-book-open text-amber-600"></i> ${student.course}
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                        <span>Class of 2026</span>
+                        <span class="font-semibold text-blue-900"><i class="fa-solid fa-check-circle text-emerald-500 mr-1"></i> Graduated</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // =========================================================================
+        // FULL DIRECTORY TAB RENDERING
+        // =========================================================================
+        function renderDirectoryTable() {
+            const tbody = document.getElementById('dir-table-body');
+            const searchVal = document.getElementById('dir-search').value.toLowerCase().trim();
+            const levelVal = document.getElementById('dir-level-filter').value;
+            const countDisplay = document.getElementById('dir-count-visible');
+
+            let filtered = graduatesData.filter(student => {
+                let matchesLevel = (levelVal === 'ALL') || (student.level === levelVal);
+                let matchesSearch = student.name.toLowerCase().includes(searchVal) || 
+                                    student.course.toLowerCase().includes(searchVal);
+                return matchesLevel && matchesSearch;
+            });
+
+            countDisplay.innerText = filtered.length;
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="p-8 text-center text-slate-500">
+                            No graduates found matching your search.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(student => `
+                <tr class="hover:bg-slate-50 transition">
+                    <td class="p-4 text-center font-mono text-xs text-slate-500 font-bold">${student.id}</td>
+                    <td class="p-4 font-bold text-slate-900">${student.name}</td>
+                    <td class="p-4 text-slate-700 font-medium">${student.course}</td>
+                    <td class="p-4 text-center">
+                        <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-full border ${getLevelBadgeClass(student.level)}">
+                            ${student.level}
+                        </span>
+                    </td>
+                    <td class="p-4 text-right">
+                        <span class="text-xs bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-full border border-emerald-200">
+                            Conferred
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function printGraduateList() {
+            window.print();
+        }
+
+        function handleApplicationSubmit(e) {
+            e.preventDefault();
+            alert("Application submitted successfully! Our admissions office will contact you shorty.");
+            e.target.reset();
+        }
+
+        // =========================================================================
+        // ON PAGE LOAD INITIALIZATION
+        // =========================================================================
+        window.onload = function() {
+            renderHomepageGraduates();
+            renderDirectoryTable();
+        };
+    </script>
+</body>
+</html>
